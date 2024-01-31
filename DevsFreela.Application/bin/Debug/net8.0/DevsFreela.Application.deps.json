@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DevsFreela.Application/1.0.0": {
+        "dependencies": {
+          "DevsFreela.Core": "1.0.0",
+          "DevsFrella.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "DevsFreela.Application.dll": {}
+        }
+      },
+      "DevsFreela.Core/1.0.0": {
+        "runtime": {
+          "DevsFreela.Core.dll": {}
+        }
+      },
+      "DevsFrella.Infrastructure/1.0.0": {
+        "dependencies": {
+          "DevsFreela.Core": "1.0.0"
+        },
+        "runtime": {
+          "DevsFrella.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DevsFreela.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DevsFreela.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DevsFrella.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

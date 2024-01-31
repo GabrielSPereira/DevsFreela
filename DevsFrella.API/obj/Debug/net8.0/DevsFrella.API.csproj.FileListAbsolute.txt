@@ -14,7 +14,6 @@ C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\obj\Debug\net8.0\DevsFrella.API.AssemblyInfoInputs.cache
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\obj\Debug\net8.0\DevsFrella.API.AssemblyInfo.cs
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\obj\Debug\net8.0\DevsFrella.API.csproj.CoreCompileInputs.cache
-C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\obj\Debug\net8.0\DevsFrella.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\obj\Debug\net8.0\DevsFrella.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\obj\Debug\net8.0\DevsFrella.API.sourcelink.json
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\obj\Debug\net8.0\staticwebassets.build.json
@@ -31,3 +30,9 @@ C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\obj\Debug\net8.0\DevsFrella.API.pdb
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\obj\Debug\net8.0\DevsFrella.API.genruntimeconfig.cache
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\obj\Debug\net8.0\ref\DevsFrella.API.dll
+C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\bin\Debug\net8.0\DevsFreela.Application.dll
+C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\bin\Debug\net8.0\DevsFreela.Core.dll
+C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\bin\Debug\net8.0\DevsFrella.Infrastructure.dll
+C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\bin\Debug\net8.0\DevsFreela.Application.pdb
+C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\bin\Debug\net8.0\DevsFrella.Infrastructure.pdb
+C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFrella.API\bin\Debug\net8.0\DevsFreela.Core.pdb

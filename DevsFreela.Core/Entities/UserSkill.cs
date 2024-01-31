@@ -8,10 +8,10 @@ namespace DevsFreela.Core.Entities
 {
     public class UserSkill : BaseEntity
     {
-        public Skill(string description)
+        public UserSkill(int idUser, int idSkill)
         {
-            Description = description;
-            CreatedAt = DateTime.Now;
+            IdUser = idUser;
+            IdSkill = idSkill;
         }
 
         public int IdUser { get; private set; }

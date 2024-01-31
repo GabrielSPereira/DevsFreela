@@ -1,5 +1,4 @@
-﻿using DevsFrella.API.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace DevsFrella.API.Controllers
 {
@@ -13,7 +12,7 @@ namespace DevsFrella.API.Controllers
             return Ok();
         }
 
-        [HttpPost]
+        /*[HttpPost]
         public IActionResult Post([FromBody] CreateProjectModel createProject)
         {
 
@@ -25,6 +24,6 @@ namespace DevsFrella.API.Controllers
         {
 
             return NoContent();
-        }
+        }*/
     }
 }

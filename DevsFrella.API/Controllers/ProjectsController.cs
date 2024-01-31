@@ -1,4 +1,5 @@
-﻿using DevsFrella.API.Models;
+﻿using DevsFreela.Application.InputModels;
+using DevsFreela.Application.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DevsFrella.API.Controllers
@@ -6,66 +7,78 @@ namespace DevsFrella.API.Controllers
     [Route("api/projects")]
     public class ProjectsController : ControllerBase
     {
+        private readonly IProjectService _projectService;
+        public ProjectsController(IProjectService projectService) 
+        {
+            _projectService = projectService;
+        }
+
+
         [HttpGet]
         public IActionResult Get(string query)
         {
-            return Ok();
+            var projects = _projectService.GetAll(query);
+            return Ok(projects);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
+            var project = _projectService.GetById(id);
+            if(project == null)
+            {
+                return NotFound();
+            }
 
-            return Ok();
+            return Ok(project);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] CreateProjectModel createProject)
+        public IActionResult Post([FromBody] NewProjectInputModel inputModel)
         {
-
-            return CreatedAtAction(nameof(GetById), new { id = createProject.Id }, createProject);
+            var id = _projectService.Create(inputModel);
+            return CreatedAtAction(nameof(GetById), new { id = id }, inputModel);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Post(int id, [FromBody] UpdateProjectModel updateProject)
+        public IActionResult Post(int id, [FromBody] UpdateProjectInputModel inputModel)
         {
-
+            _projectService.Update(inputModel);
             return NoContent();
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-
+            _projectService.Delete(id);
             return NoContent();
         }
 
         [HttpPost("{id}/comments")]
-        public IActionResult PostComment(int id, [FromBody] CreateProjectModel createProject)
+        public IActionResult PostComment(int id, [FromBody] CreateCommentInputModel inputModel)
         {
-
+            _projectService.CreateComment(inputModel);
             return NoContent();
         }
 
         [HttpPut("{id}/start")]
         public IActionResult Start(int id)
         {
-
+            _projectService.Start(id);
             return NoContent();
         }
 
         [HttpPut("{id}/finish")]
         public IActionResult Finish(int id)
         {
-
+            _projectService.Finish(id);
             return NoContent();
         }
 
-        [HttpPut("{id}/login")]
+        /*[HttpPut("{id}/login")]
         public IActionResult Login(int id, [FromBody] CreateProjectModel createProject)
         {
-
             return NoContent();
-        }
+        }*/
     }
 }
