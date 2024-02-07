@@ -41,7 +41,7 @@ namespace DevsFrella.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Post(int id, [FromBody] UpdateProjectInputModel inputModel)
+        public IActionResult Put(int id, [FromBody] UpdateProjectInputModel inputModel)
         {
             _projectService.Update(inputModel);
             return NoContent();
