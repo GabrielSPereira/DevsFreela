@@ -1,39 +1,71 @@
 ﻿using DevsFreela.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace DevsFrella.Infrastructure.Persistence
 {
-    public class DevsFreelaDbContext
+    public class DevsFreelaDbContext : DbContext
     {
-        public DevsFreelaDbContext()
+        public DevsFreelaDbContext(DbContextOptions<DevsFreelaDbContext> options) : base(options)
         {
-            Projects = new List<Project>
-            {
-                new Project("title", "description", 1, 1, 100),
-                new Project("title1", "description1", 1, 1, 2),
-                new Project("title1", "description1", 1, 1, 3),
-            };
-
-            Users = new List<User>
-            {
-                new User("fullname", "email", DateTime.Now.AddYears(-10)),
-                new User("fullname1", "email2", DateTime.Now.AddYears(-11)),
-                new User("fullname1", "email2", DateTime.Now.AddYears(-12)),
-            };
-
-            Skills = new List<Skill>
-            {
-                new Skill("description"),
-                new Skill("description1"),
-                new Skill("description2"),
-            };
+            
         }
 
-        public List<Project> Projects { get; set; }
+        public DbSet<Project> Projects { get; set; }
 
-        public List<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
-        public List<Skill> Skills { get; set; }
+        public DbSet<Skill> Skills { get; set; }
 
-        public List<ProjectComment> ProjectComments { get; set; }
+        public DbSet<UserSkill> UserSkills { get; set; }
+
+        public DbSet<ProjectComment> ProjectComments { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Project>()
+                .HasKey(p => p.Id);
+
+            modelBuilder.Entity<Project>()
+                .HasOne(p => p.Freelancer)
+                .WithMany(p => p.FreelanceProjects)
+                .HasForeignKey(p => p.IdFreelancer)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Project>()
+                .HasOne(p => p.Client)
+                .WithMany(p => p.OwnedProjects)
+                .HasForeignKey(p => p.IdClient)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<User>()
+                .HasKey(p => p.Id);
+
+            modelBuilder.Entity<User>()
+                .HasMany(p => p.Skills)
+                .WithOne()
+                .HasForeignKey(p => p.IdSkill)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Skill>()
+                .HasKey(p => p.Id);
+
+            modelBuilder.Entity<UserSkill>()
+                .HasKey(p => p.Id);
+
+            modelBuilder.Entity<ProjectComment>()
+                .HasKey(p => p.Id);
+
+            modelBuilder.Entity<ProjectComment>()
+                .HasOne(p => p.Project)
+                .WithMany(p => p.Comments)
+                .HasForeignKey(p => p.IdProject)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<ProjectComment>()
+                .HasOne(p => p.User)
+                .WithMany(p => p.Comments)
+                .HasForeignKey(p => p.IdUser)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }

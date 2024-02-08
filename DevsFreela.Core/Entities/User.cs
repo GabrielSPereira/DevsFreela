@@ -37,6 +37,8 @@ namespace DevsFreela.Core.Entities
 
         public List<Project> FreelanceProjects { get; private set; }
 
+        public List<ProjectComment> Comments { get; private set; }
+
         public void Update(string fullName, string email, DateTime birthDate, bool active)
         {
             this.FullName = fullName;
