@@ -14,3 +14,5 @@ C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFreela.Infr
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFreela.Infrastructure\obj\Debug\net8.0\refint\DevsFrella.Infrastructure.dll
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFreela.Infrastructure\obj\Debug\net8.0\DevsFrella.Infrastructure.pdb
 C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFreela.Infrastructure\obj\Debug\net8.0\ref\DevsFrella.Infrastructure.dll
+C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFreela.Infrastructure\bin\Debug\net8.0\DevsFrella.Infrastructure.runtimeconfig.json
+C:\Users\Gabriel\source\repos\OrientadoObjeto\Projeto\DevsFrella\DevsFreela.Infrastructure\obj\Debug\net8.0\DevsFrella.Infrastructure.genruntimeconfig.cache

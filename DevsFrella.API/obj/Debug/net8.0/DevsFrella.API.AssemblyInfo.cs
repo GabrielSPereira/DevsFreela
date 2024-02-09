@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DevsFrella.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56b16d8d01927f28ec44754e9941ee7d227387dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35b3a90bc2b1400523818ee24786c8dac15dcf4b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DevsFrella.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DevsFrella.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
