@@ -1,6 +1,0 @@
-@DevsFrella.API_HostAddress = http://localhost:5151
-
-GET {{DevsFrella.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
