@@ -1,12 +1,16 @@
 ﻿using DevsFreela.Application.Commands.CreateComment;
 using DevsFreela.Application.Commands.CreateProject;
 using DevsFreela.Application.Commands.DeleteProject;
+using DevsFreela.Application.Commands.FinishProject;
+using DevsFreela.Application.Commands.StartProject;
 using DevsFreela.Application.Commands.UpdateProject;
 using DevsFreela.Application.InputModels;
 using DevsFreela.Application.Queries.GetAllProjects;
+using DevsFreela.Application.Queries.GetProjectById;
 using DevsFreela.Application.Services.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace DevsFrella.API.Controllers
@@ -34,8 +38,9 @@ namespace DevsFrella.API.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var project = _projectService.GetById(id);
-            if(project == null)
+            var getProjectById = new GetProjectByIdQuery(id);
+            var project = _mediator.Send(getProjectById);
+            if (project == null)
             {
                 return NotFound();
             }
@@ -73,16 +78,18 @@ namespace DevsFrella.API.Controllers
         }
 
         [HttpPut("{id}/start")]
-        public IActionResult Start(int id)
+        public async Task<IActionResult> Start(int id)
         {
-            _projectService.Start(id);
+            var command = new StartProjectCommand(id);
+            await _mediator.Send(command);
             return NoContent();
         }
 
         [HttpPut("{id}/finish")]
-        public IActionResult Finish(int id)
+        public async Task<IActionResult> Finish(int id)
         {
-            _projectService.Finish(id);
+            var command = new FinishProjectCommand(id);
+            await _mediator.Send(command);
             return NoContent();
         }
 
